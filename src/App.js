@@ -23,7 +23,7 @@ function App() {
       <Row>
         <Col>
           <CustomButton text={text} hint="hint" buttonClick={buttonClick} buttonHover={buttonHover} buttonLeave = {buttonLeave}/>
-          <Popup popClass = {popClass}/>
+          <Popup popClass = {popClass} />
         </Col>
       </Row>
       </Container>
