@@ -1,0 +1,17 @@
+.popup{
+    background-color: rgb(136, 136, 236);
+    width: 150px;
+    height: 80px;
+    position: absolute;
+    top: 20px;
+    left: 140px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.none{
+    display: none;
+}
+.block{
+    display: block;
+    cursor:text;
+}
