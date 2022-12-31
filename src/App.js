@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import CustomButton from "./components/CustomButton/CustomButton.js";
+import Popup from "./components/Popup/Popup.js";
+import {Container, Row, Col} from "reactstrap";
 
 function App() {
+  const [text, setText] = useState("Click");
+  const [popClass, setpopClass] = useState('none')
+  let buttonClick = (e) => {
+    e.target.className = "warnMessage";
+    setText("Clicked");
+  };
+  let buttonHover = () => {
+    setpopClass('block')
+  };
+  let buttonLeave = () => {
+    setpopClass('none')
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+      <Row>
+        <Col>
+          <CustomButton text={text} hint="hint" buttonClick={buttonClick} buttonHover={buttonHover} buttonLeave = {buttonLeave}/>
+          <Popup popClass = {popClass}/>
+        </Col>
+      </Row>
+      </Container>
     </div>
   );
 }
